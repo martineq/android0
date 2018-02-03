@@ -26,8 +26,8 @@ RUN apt-get update \
 
 # Descargar Android SDK y aceptar licencias
 RUN cd "$ANDROID_HOME" \
-    && apt-get install curl \
-    && apt-get install unzip \
+    && apt-get install -y curl \
+    && apt-get install -y unzip \
     && curl -o sdk.zip $SDK_URL \
     && unzip sdk.zip \
     && rm sdk.zip \
