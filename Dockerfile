@@ -16,7 +16,8 @@ ENV SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-3859397.zi
     ANDROID_BUILD_TOOLS_VERSION=26.0.2
 
 # Instalar Java SDK
-RUN add-apt-repository -y ppa:webupd8team/java \
+RUN apt-get install -y software-properties-common \
+    && add-apt-repository -y ppa:webupd8team/java \
     && apt-get update \
     && echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections \
     && apt-get install -y oracle-java8-installer \
