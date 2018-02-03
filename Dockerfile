@@ -25,8 +25,7 @@ RUN apt-get update \
     && apt-get install oracle-java8-set-default
 
 # Descargar Android SDK y aceptar licencias
-RUN mkdir "$ANDROID_HOME" .android \
-    && cd "$ANDROID_HOME" \
+RUN cd "$ANDROID_HOME" \
     && curl -o sdk.zip $SDK_URL \
     && unzip sdk.zip \
     && rm sdk.zip \
@@ -40,6 +39,7 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS_VERSIO
 
 # Agrego soporte para librerias i386 
 RUN apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+RUN echo "EL FIN" 
 
 # TODO: Usar si hace falta
 # Copio los directorios del repositorio
