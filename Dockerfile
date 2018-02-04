@@ -16,7 +16,9 @@ ENV SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-3859397.zi
     ANDROID_BUILD_TOOLS_VERSION=26.0.2
 
 # Instalar Java SDK
-RUN uname -a
+RUN dpkg --add-architecture i386 \
+    && apt-get update \
+    && apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
 RUN echo "EL FIN" 
 
 # TODO: Usar si hace falta
