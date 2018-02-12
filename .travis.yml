@@ -20,6 +20,8 @@ android:
     # Version SDK usada para compilar el proyecto
     - android-26
 
+# Comando para correr el build gradle
+script: ./gradlew assembleRelease
 
 # Solo realizo build sobre los branches elegidos
 branches:
